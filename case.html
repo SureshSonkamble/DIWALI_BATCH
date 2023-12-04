@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function day(){
+            let n=parseInt(document.getElementById("n").value);
+           // alert("test"+n);
+           switch(n){
+            case 1:
+                document.write("MON");
+                document.body.style.backgroundColor="RED";
+             
+            case 2:
+                document.write("SUN");
+                document.body.style.backgroundColor="GREEN";
+             }
+         
+        }
+    </script>
+</head>
+<body>
+    <center>
+        Number<input type="number" id="n">
+        <input type="button" onclick="day()" value="Get Table">
+    </center>
+</body>
+</html>

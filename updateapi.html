@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+        function save(){
+            let hm=document.getElementById("hnm").value;
+            let a=document.getElementById("ar").value;
+            let c=document.getElementById("ct").value;
+            let m=document.getElementById("mob").value;
+            let p=document.getElementById("pn").value;
+            //alert(hm+a+c+m+p);
+            axios.post("https://codingseekho.in/APP/LIFE_EXPRESS_FEES/update_hospital.php?hname="+hm+"&addr="+a+"&city="+c+"&mob="+m+"&pin="+p+"&id=10")
+              .then(response=>{
+                alert(response.data.posts.status+ "Update Success");
+              })
+              .catch(error=>{
+                console.error(error)
+              })
+
+        }
+    </script>
+</head>
+<body>
+    <center>
+        <h1>ADD HOSPITAL DATA</h1>
+        Hname<input type="text" id="hnm"><br>
+        Area<input type="text" id="ar"><br>
+        City<input type="text" id="ct"><br>
+        Mobile<input type="text" id="mob"><br>
+        Pin<input type="text" id="pn"><br>
+
+        <input type="button" onclick="save()" value="Add Data">
+    </center>
+</body>
+</html>

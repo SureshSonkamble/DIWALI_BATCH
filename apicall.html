@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js" type="text/javascript"></script>           
+    <script>
+        function api(){
+        
+            axios.post("https://codingseekho.in/APP/LIFE_EXPRESS_FEES/hospital_list.php?ct=")
+            .then(response=>{
+                console.log(response.data);
+                var l=response.data.posts.post;
+                //document.write(response.data.posts.status);        
+                for (let i=0;i<=l.length;i++){
+                  // console.log(l[i].HID);
+                    var rowData="<tr><td>"+l[i].HID+"</td>";
+                    rowData +="<td>"+l[i].HNAME+"</td>";
+                    rowData +="<td>"+l[i].AREA+"</td>";
+                    rowData +="<td>"+l[i].CITY+"</td>"; 
+                    rowData +="<td>"+l[i].MOB+"</td>"; 
+                    rowData +="<td>"+l[i].PIN+"</td>";           	
+                    rowData +="</tr>";
+	               $('#dt').append(rowData);
+                }
+            })
+            .catch(error=>{
+                console.error(error)
+            })
+        }
+    </script>
+
+   
+</head>
+<body>
+    <center>
+        <input type="button" onclick="api()" value="API CALL">
+    </center>
+
+    <table class="table table-primary">
+        <thead>
+        <tr>
+             <th width="10%" style="font-size: 11px;">ID</th>
+             <th width="20%" style="font-size: 11px;">HName</th>
+             <th width="20%" style="font-size: 11px;">Area</th>
+             <th width="15%" style="font-size: 11px;">City</th>
+             <th width="20%" style="font-size: 11px;">Mobile</th>
+             <th width="15%" style="font-size: 11px;">Pin</th>
+             
+        </tr>
+    </thead>
+    <tbody id="dt">
+
+    </tbody>
+</table>
+</body>
+</html>

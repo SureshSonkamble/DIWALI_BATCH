@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+        function save(){
+            let hid=document.getElementById("hid").value;
+            
+            axios.post("https://codingseekho.in/APP/LIFE_EXPRESS_FEES/delete_hospital.php?id="+hid+"")
+              .then(response=>{
+                alert(response.data.posts.status+ "Delete Success");
+              })
+              .catch(error=>{
+                console.error(error)
+              })
+
+        }
+    </script>
+</head>
+<body>
+    <center>
+        <h1>ADD HOSPITAL DATA</h1>
+        Id<input type="text" id="hid"><br>
+       
+
+        <input type="button" onclick="save()" value="Add Data">
+    </center>
+</body>
+</html>

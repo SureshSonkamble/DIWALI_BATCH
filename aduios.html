@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>ANIMAL SOUNDS</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script>
+    function csound(){
+let s=document.getElementById("a");
+s.play()
+    }
+    function dsound(){
+let s=document.getElementById("b");
+s.play()
+    }
+</script>
+</head>
+<body>
+
+<div class="jumbotron text-center">
+  <h1>ANIMAL SOUND WBSITE</h1>
+</div>
+  
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4">
+        <img src="IMG/prt.jpeg" width="150" height="150">
+      <h3>PARROT</h3>
+      <audio id="a">
+        <source src="SOUND/b.WAV" type="audio/mpeg">
+      </audio>
+      <input type="button" onclick="csound()" class="btn btn-primary" value="CAT AUDIO">
+       </div>
+    <div class="col-sm-4">
+        <img src="IMG/dg.jpeg" width="150" height="150">
+      <h3>DOG</h3>
+      <audio id="b">
+        <source src="SOUND/d.WAV" type="audio/mpeg">
+      </audio>
+      <input type="button" onclick="dsound()" class="btn btn-danger" value="DOG AUDIO">
+    </div>
+    <div class="col-sm-4">
+      <h3>CAT</h3>        
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

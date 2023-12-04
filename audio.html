@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function csound(){
+   let s=document.getElementById("a");
+   s.play()
+        }
+        function dsound(){
+   let s=document.getElementById("b");
+   s.play()
+        }
+    </script>
+</head>
+<body>
+    <center>
+     <audio id="a">
+        <source src="SOUND/b.WAV" type="audio/mpeg">
+      </audio>
+      <audio id="b">
+        <source src="SOUND/d.WAV" type="audio/mpeg">
+      </audio>
+        <input type="button" onclick="csound()" value="CAT AUDIO">
+        <input type="button" onclick="dsound()" value="DOG AUDIO">
+    </center>
+</body>
+</html>

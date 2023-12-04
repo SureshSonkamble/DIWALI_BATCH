@@ -4,15 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script>
+        function add(){
+          let  n1=parseInt(document.getElementById("n1").value);
+          let  n2=parseInt(document.getElementById("n2").value);
+          let ans=n1+n2;
+          alert("SUM= "+ans);
+        }
+    </script>
 </head>
 <body>
     <center>
-<form action="add.php" method="post">
-  Number 1<input type="number" name="n1"><br>
-  Number 2<input type="number" name="n2"><br>
-  <input type="submit" value="ADD"><br>
-</center>
-
-</form>
+        Number 1<input type="number" id="n1">
+        Number 2<input type="number" id="n2">
+        <input type="button" onclick="add()" value="ADD">
+    </center>
 </body>
 </html>

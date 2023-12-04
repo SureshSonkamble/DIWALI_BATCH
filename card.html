@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    function calldata(){
+        alert("onload data");
+        axios.post('https://codingseekho.in/APP/RTO/rto_superadmin.php')
+            .then(responce=>{
+                console.log(responce.data);
+                var sts=responce.data.posts.status;
+                var v=responce.data.posts.no_v_scaned;
+                var f=responce.data.posts.fine_amt;
+                var r=responce.data.posts.rto_reg;
+                console.log(sts);
+               // var st=document.getElementById("sts").innerHTML=sts;
+               let amt=document.getElementById("amt").innerHTML=f;
+
+                loadrpt();
+            }) 
+            .catch(error=>{
+                console.error(error);
+            })
+        }
+       
+    
+  </script>
+</head>
+<body onload="calldata()">
+    <center>
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+          <h1 class="card-title">Fine Amount</h1>
+          <h3 id="amt" class="card-subtitle mb-2 text-muted">Card subtitle</h3>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <a href="#" class="card-link">Card link</a>
+          <a href="#" class="card-link">Another link</a>
+        </div>
+      </div>
+    </center>
+</body>
+</html>
